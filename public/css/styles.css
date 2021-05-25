@@ -51,14 +51,14 @@ body {
 }
 
 .container:nth-of-type(1) {
-  background-color: yellow;
+  /* background-color: yellow; */
   grid-column: 2 / 3;
   grid-row: 1;
   
 }
 
 .container:nth-of-type(2) {
-  background-color: blue;
+  /* background-color: blue; */
   grid-column: 1 / 2;
   grid-row: 1;
 
@@ -67,14 +67,14 @@ body {
 .container {
   display: grid;
   /* grid-template-rows: repeat(3, 50px); */
-  grid-template-rows: 50px 50px auto;
+  grid-template-rows: 50px 50px 50px;
   /* grid-template-columns: repeat(4, 90px); */
-  grid-template-columns: auto 80px 90px 90px;
+  grid-template-columns: 60px 80px 55px 125px;
   /* justify-items: stretch;
   align-items: stretch; */
   /* grid-template-areas: ; */
-  width: fit-content;
-  height: fit-content;
+  /* width: fit-content;
+  height: fit-content; */
   border: 3px solid rgb(54, 51, 51);
 }
 
@@ -92,8 +92,10 @@ body {
   /* background-color: blueviolet; */
   grid-column: 3 / 5;
   font-family: "code128", serif;
-  font-size: 30px;
-  padding: 15px;
+  font-size: 35px;
+  /* height: auto; */
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 .container div:nth-of-type(3) {
@@ -105,21 +107,24 @@ body {
 }
 
 .container div:nth-of-type(4) {
-  /* background-color: chocolate; */
-  grid-column: 3 / 4;
+  /* background-color: rgb(210, 30, 39); */
+  grid-column: 3 / 3;
   font-size: 30px;
   font-weight: bold;
-  padding-top: 15px;
-  padding-left: 30px;
+  padding-top: 10px;
+  padding-left: 15px;
+  width: auto;
 }
 
 .container div:nth-of-type(5) {
-  background-color: tomato;
-  width: fit-content;
+  /* background-color: tomato; */
+  width: auto;
+  /* overflow: hidden; */
   grid-column: 4 / 5;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
-  padding-top: 5px;
+  padding-top: 10px;
+  /* object-fit: contain; */
 }
 
 .container div:nth-of-type(6) {
@@ -127,15 +132,6 @@ body {
   grid-column: 1 / 5;
   font-weight: bold;
   text-align: center;
-  font-size: 21px;
+  font-size: 15px;
   padding-top: 10px;
-}
-
-.vl {
-  border-left: 6px solid green;
-  height: 100vh;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
 }

@@ -1,6 +1,7 @@
 const path = require('path');
 const getEtiquetas = require('./serviceSql');
 const express = require('express');
+const { get } = require('http');
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -13,14 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', async function (req, res) {
-  res.render('index');
-  const etiquetas = await getEtiquetas();
-  console.log('etiquetas:', etiquetas.recordset);
+  // const etiquetas = await getEtiquetas();
+
+  // res.render('index', { etiquetas });
+  res.render('layout');
+  // console.log('etiquetas:', etiquetas.recordset);
 });
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
   // res.sendFile(__dirname + '/index.html');
-  res.render('index');
+  const etiquetas = await getEtiquetas();
+  // console.log(etiquetas);
+  res.render('index', { etiquetas });
 });
 
 app.listen(3000, () => {
