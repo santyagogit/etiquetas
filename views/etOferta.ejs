@@ -1,0 +1,37 @@
+<div>
+  <form action="" method="post"><input type="submit"></form>
+</div>
+<% etiquetas.forEach(function(et){ %>
+  <div class="super-container">
+
+    <div class="container">
+      <div>Oferta</div>
+      <div>
+        <%= et.BARCODE %>
+      </div>
+      <div>11509</div>
+      <div>$</div>
+      <div>
+        <%= (et.PUNIT).toFixed(2) %>
+      </div>
+      <div>
+        <%= et.DESCRIP %>
+      </div>
+    </div>
+    <div class="container">
+      <div>Oferta</div>
+      <div>
+        <%= et.BARCODE %>
+      </div>
+      <div>11509</div>
+      <div>$</div>
+      <div>
+        <%= (et.PUNIT).toFixed(2) %>
+      </div>
+      <div>
+        <%= et.DESCRIP %>
+      </div>
+    </div>
+
+  </div>
+  <% }); %>

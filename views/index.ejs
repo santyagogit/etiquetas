@@ -10,45 +10,7 @@
 </head>
 
 <body>
-  <div>
-    <form action="" method="post"><input type="submit"></form>
-  </div>
-  <% etiquetas.forEach(function(et){ %>
-    <div class="super-container">
-
-      <div class="container">
-        <div>Oferta</div>
-        <div>
-          <%= et.BARCODE %>
-        </div>
-        <div>11509</div>
-        <div>$</div>
-        <div>
-          <%= (et.PUNIT).toString().split('.')[0] %>
-            <sup
-              style="text-decoration: underline;font-size: 18px;margin: 2px;"><%= (et.PUNIT).toString().split('.')[1].Number %></sup>
-        </div>
-        <div>
-          <%= et.DESCRIP %>
-        </div>
-      </div>
-      <div class="container">
-        <div>Oferta</div>
-        <div>
-          <%= et.BARCODE %>
-        </div>
-        <div>11509</div>
-        <div>$</div>
-        <div>
-          <%= et.PUNIT %><sup style="text-decoration: underline;font-size: 18px;margin: 5px;">00</sup>
-        </div>
-        <div>
-          <%= et.DESCRIP %>
-        </div>
-      </div>
-
-    </div>
-    <% }); %>
+  <%- include('etOferta', {etiquetas: etiquetas}); %>
 </body>
 
 </html>
