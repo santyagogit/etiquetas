@@ -1,7 +1,6 @@
 const path = require('path');
 const getEtiquetas = require('./serviceSql');
 const express = require('express');
-const { get } = require('http');
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -24,7 +23,15 @@ app.get('/', async function (req, res) {
 app.post('/', async (req, res) => {
   // res.sendFile(__dirname + '/index.html');
   const etiquetas = await getEtiquetas();
-  // console.log(etiquetas);
+  
+  // etiquetas.forEach((element) => {
+  //   console.log(element.PUNIT);
+  // });
+  
+  etiquetas.map((et) => {
+    return et.PUNIT = et.PUNIT.toFixed(2);
+  });
+
   res.render('index', { etiquetas });
 });
 
