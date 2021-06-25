@@ -1,49 +1,66 @@
-<div>
-  <form action="" method="post"><input type="submit"></form>
-</div>
-<% etiquetas.forEach(function(et){ %>
-  <div class="super-container">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="container">
-      <div>Oferta</div>
-      <div>
-        <%= et.BARCODE %>
-      </div>
-      <div>11509</div>
-      <div>$</div>
-      <div>
-        <a>
-          <%= (et.PUNIT + '' ).split('.')[0] %>
-        </a>
-        <span>
-          <%= (et.PUNIT + '' ).split('.')[1] %>
-        </span>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/etOferta.css">
+  <title>Document</title>
+</head>
 
-      </div>
-      <div>
-        <%= et.DESCRIP %>
-      </div>
-    </div>
-    <div class="container">
-      <div>Oferta</div>
-      <div>
-        <%= et.BARCODE %>
-      </div>
-      <div>11509</div>
-      <div>$</div>
-      <div>
-        <a>
-          <%= (et.PUNIT + '' ).split('.')[0] %>
-        </a>
-        <span>
-          <%= (et.PUNIT + '' ).split('.')[1] %>
-        </span>
+<body>
 
-      </div>
-      <div>
-        <%= et.DESCRIP %>
-      </div>
-    </div>
 
+  <div>
+    <form action="" method="post"><input type="submit"></form>
   </div>
-  <% }); %>
+  <% etiquetas.forEach(function(et){ %>
+    <div class="super-container">
+
+      <div class="container">
+        <div>Oferta</div>
+        <div>
+          <%= et.BARCODE %>
+        </div>
+        <div>11509</div>
+        <div>$</div>
+        <div>
+          <a>
+            <%= (et.PUNIT + '' ).split('.')[0] %>
+          </a>
+          <span>
+            <%= (et.PUNIT + '' ).split('.')[1] %>
+          </span>
+
+        </div>
+        <div>
+          <%= et.DESCRIP %>
+        </div>
+      </div>
+      <div class="container">
+        <div>Oferta</div>
+        <div>
+          <%= et.BARCODE %>
+        </div>
+        <div>11509</div>
+        <div>$</div>
+        <div>
+          <a>
+            <%= (et.PUNIT + '' ).split('.')[0] %>
+          </a>
+          <span>
+            <%= (et.PUNIT + '' ).split('.')[1] %>
+          </span>
+
+        </div>
+        <div>
+          <%= et.DESCRIP %>
+        </div>
+      </div>
+
+    </div>
+    <% }); %>
+</body>
+
+</html>

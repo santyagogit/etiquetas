@@ -11,15 +11,6 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-// serve your css as static
-
-// app.get('/', async function (req, res) {
-// const etiquetas = await getEtiquetas();
-
-// res.render('index', { etiquetas });
-// res.render('layout');
-// console.log('etiquetas:', etiquetas.recordset);
-// });
 
 app.get('/', async (req, res) => {
   // res.sendFile(__dirname + '/index.html');
@@ -34,7 +25,7 @@ app.get('/', async (req, res) => {
     console.log(element.PUNIT);
   });
   
-  res.render('index', { etiquetas });
+  res.render('etOferton', { etiquetas });
 });
 
 app.listen(3000, () => {

@@ -1,19 +1,36 @@
-<% etiquetas.forEach(function(et){ %>
-  <div class="container">
-    <img class="etiqueta" src="/images/ofertonSgl.png" alt="">
-    <div>
-      <%= et.BARCODE %>
-    </div>
-    <div>11509</div>
-    <div>
-      <%= (et.PUNIT + '' ).split('.')[0] %>
-        <span>
-          <%= (et.PUNIT + '' ).split('.')[1] %>
-        </span>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/etOferton.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <% etiquetas.forEach(function(et){ %>
+    <div class="container">
+      <img class="etiqueta" src="/images/ofertonSgl.png" alt="">
+      <div>
+        <%= et.BARCODE %>
+      </div>
+      <div>11509</div>
+      <div>
+        <%= (et.PUNIT + '' ).split('.')[0] %>
+          <span>
+            <%= (et.PUNIT + '' ).split('.')[1] %>
+          </span>
+
+      </div>
+      <div>
+        <%= et.DESCRIP %>
+      </div>
     </div>
-    <div>
-      <%= et.DESCRIP %>
-    </div>
-  </div>
-  <% }); %>
+    <% }); %>
+
+</body>
+
+</html>
