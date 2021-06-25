@@ -14,7 +14,6 @@
 body {
   margin: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  /* font-family: "barcode39"; */
 }
 
 .clearfix::after {
@@ -35,18 +34,6 @@ body {
   margin: 2px;
 }
 
-/* .container:nth-of-type(1) {
-  background-color: yellow;
-  grid-column: 2 / 3;
-  grid-row: 1;
-}
-
-.container:nth-of-type(2) {
-  background-color: blue;
-  grid-column: 1 / 2;
-  grid-row: 1;
-} */
-
 .container {
   display: grid;
   /* grid-template-rows: repeat(3, 50px); */
@@ -62,9 +49,6 @@ body {
   font-size: 38px;
   font-style: italic;
   font-weight: 900;
-  /* padding-top: 10px;
-  padding-left: 10px; */
-  /* align-items: center; */
 }
 
 .container div:nth-of-type(2) {
@@ -72,7 +56,6 @@ body {
   grid-column: 3 / 5;
   font-family: 'code128', serif;
   font-size: 42px;
-  /* height: auto; */
   padding-top: 5px;
   padding-left: 20px;
 }
@@ -98,12 +81,12 @@ body {
 .container div:nth-of-type(5) {
   background-color: tomato;
   width: auto;
-  display: flex;
-  /* overflow: hidden; */
   grid-column: 4 / 5;
   font-size: 45px;
   font-weight: 900;
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .container div:nth-of-type(6) {
@@ -117,9 +100,11 @@ body {
 
 span {
   font-size: 25px;
-  padding-top: 7px;
-  padding-left: 10px;
   text-decoration: underline;
-  text-align: right;
-  /* width: 40px; */
+  padding-left: 5px;
+  padding-top: 2px;
+}
+
+a {
+  align-self: center;
 }
