@@ -3,35 +3,37 @@ const getEtiquetas = require('./serviceSql');
 const express = require('express');
 const app = express();
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// serve your css as static
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', async function (req, res) {
-  // const etiquetas = await getEtiquetas();
+// serve your css as static
 
-  // res.render('index', { etiquetas });
-  res.render('layout');
-  // console.log('etiquetas:', etiquetas.recordset);
-});
+// app.get('/', async function (req, res) {
+// const etiquetas = await getEtiquetas();
 
-app.post('/', async (req, res) => {
+// res.render('index', { etiquetas });
+// res.render('layout');
+// console.log('etiquetas:', etiquetas.recordset);
+// });
+
+app.get('/', async (req, res) => {
   // res.sendFile(__dirname + '/index.html');
   const etiquetas = await getEtiquetas();
-  
-  // etiquetas.forEach((element) => {
-  //   console.log(element.PUNIT);
-  // });
+
   
   etiquetas.map((et) => {
-    return et.PUNIT = et.PUNIT.toFixed(2);
+    return (et.PUNIT = et.PUNIT.toFixed(2));
   });
 
+  etiquetas.forEach((element) => {
+    console.log(element.PUNIT);
+  });
+  
   res.render('index', { etiquetas });
 });
 
