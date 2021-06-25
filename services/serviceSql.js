@@ -16,7 +16,7 @@ sql.on('error', (err) => {
   console.log('Sql database connection error ', err);
 });
 
-async function getEtiquetas() {
+async function getProducts() {
   return await sql
     .connect(config)
     .then((pool) => {
@@ -37,4 +37,4 @@ async function getEtiquetas() {
     });
 }
 
-module.exports = getEtiquetas;
+module.exports = getProducts;
