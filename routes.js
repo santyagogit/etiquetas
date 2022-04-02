@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const getProducts = require('../services/serviceSql');
+const getProducts = require('./services/serviceSql');
+
+router.get('/', async (req, res) => {
+  // app.set('views', path.join(__dirname, 'views'));
+  // console.log(__dirname + '../pages/home.html');
+  // res.sendFile('home.html', { root: path.join(__dirname, '../pages/') });
+  // const products = await processProducts();
+  res.render('home');
+});
 
 router.get('/oferton', async (req, res) => {
   const products = await processProducts();
